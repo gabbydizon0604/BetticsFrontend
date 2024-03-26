@@ -1,0 +1,27 @@
+import { NgModule } from '@angular/core';
+import { CommonModule, DatePipe } from '@angular/common';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { SubscriptionPageComponent } from './pages/subscription-page/subscription-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AccountRoutingModule } from './account-routing.module';
+import { EventLigaPageComponent } from './pages/event-liga-page/event-liga-page.component';
+import { TableroPosicionesPageComponent } from './pages/tablero-posiciones-page/tablero-posiciones-page.component';
+
+@NgModule({
+  declarations: [
+    SubscriptionPageComponent,
+    ProfilePageComponent,
+    EventLigaPageComponent,
+    TableroPosicionesPageComponent
+  ],
+  imports: [
+    CommonModule,
+    AccountRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
+  ],
+  providers: [
+    DatePipe
+  ],
+})
+export class AccountModule { }

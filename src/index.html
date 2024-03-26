@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11440670269"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-11440670269');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-P5G92J9X');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Meta Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2562268983943192');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2562268983943192&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <meta charset="utf-8">
+    <title> Bettics </title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- FUSE Splash Screen CSS -->
+    <style type="text/css">
+        #fuse-splash-screen {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.5);
+            z-index: 99999;
+            /*pointer-events: none;*/
+        }
+        
+        #fuse-splash-screen .center {
+            display: block;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        #fuse-splash-screen .logo {
+            width: 128px;
+            margin: 0 auto;
+        }
+        
+        #fuse-splash-screen .logo img {
+            filter: drop-shadow(0px 10px 6px rgba(0, 0, 0, 0.2))
+        }
+        
+        #fuse-splash-screen .spinner-wrapper {
+            display: block;
+            position: relative;
+            width: 100%;
+            min-height: 100px;
+            height: 100px;
+        }
+        
+        #fuse-splash-screen .spinner-wrapper .spinner {
+            position: absolute;
+            overflow: hidden;
+            left: 50%;
+            margin-left: -50px;
+            animation: outer-rotate 2.91667s linear infinite;
+        }
+        
+        #fuse-splash-screen .spinner-wrapper .spinner .inner {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            animation: sporadic-rotate 5.25s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+        }
+        
+        #fuse-splash-screen .spinner-wrapper .spinner .inner .gap {
+            position: absolute;
+            left: 49px;
+            right: 49px;
+            top: 0;
+            bottom: 0;
+            border-top: 10px solid;
+            box-sizing: border-box;
+        }
+        
+        #fuse-splash-screen .spinner-wrapper .spinner .inner .left,
+        #fuse-splash-screen .spinner-wrapper .spinner .inner .right {
+            position: absolute;
+            top: 0;
+            height: 100px;
+            width: 50px;
+            overflow: hidden;
+        }
+        
+        #fuse-splash-screen .spinner-wrapper .spinner .inner .left .half-circle,
+        #fuse-splash-screen .spinner-wrapper .spinner .inner .right .half-circle {
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            border: 10px solid #4285F4;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+        }
+        
+        #fuse-splash-screen .spinner-wrapper .spinner .inner .left {
+            left: 0;
+        }
+        
+        #fuse-splash-screen .spinner-wrapper .spinner .inner .left .half-circle {
+            left: 0;
+            border-right-color: transparent;
+            animation: left-wobble 1.3125s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+            -webkit-animation: left-wobble 1.3125s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+        }
+        
+        #fuse-splash-screen .spinner-wrapper .spinner .inner .right {
+            right: 0;
+        }
+        
+        #fuse-splash-screen .spinner-wrapper .spinner .inner .right .half-circle {
+            right: 0;
+            border-left-color: transparent;
+            animation: right-wobble 1.3125s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+            -webkit-animation: right-wobble 1.3125s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+        }
+        
+        .texto-informativo {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            font-size: 16px;
+            letter-spacing: 0px;
+            word-spacing: 0px;
+            color: #01579B;
+            font-weight: 700;
+            text-decoration: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;
+            text-align: center;
+        }
+        
+        .texto-titulo-loading {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            font-size: 28px;
+            letter-spacing: 0px;
+            word-spacing: 0px;
+            color: #e7ae04;
+            font-weight: 700;
+            text-decoration: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;
+            text-align: center;
+        }
+        
+        @keyframes outer-rotate {
+            0% {
+                transform: rotate(0deg) scale(0.5);
+            }
+            100% {
+                transform: rotate(360deg) scale(0.5);
+            }
+        }
+        
+        @keyframes left-wobble {
+            0%,
+            100% {
+                transform: rotate(130deg);
+            }
+            50% {
+                transform: rotate(-5deg);
+            }
+        }
+        
+        @keyframes right-wobble {
+            0%,
+            100% {
+                transform: rotate(-130deg);
+            }
+            50% {
+                transform: rotate(5deg);
+            }
+        }
+        
+        @keyframes sporadic-rotate {
+            12.5% {
+                transform: rotate(135deg);
+            }
+            25% {
+                transform: rotate(270deg);
+            }
+            37.5% {
+                transform: rotate(405deg);
+            }
+            50% {
+                transform: rotate(540deg);
+            }
+            62.5% {
+                transform: rotate(675deg);
+            }
+            75% {
+                transform: rotate(810deg);
+            }
+            87.5% {
+                transform: rotate(945deg);
+            }
+            100% {
+                transform: rotate(1080deg);
+            }
+        }
+    </style>
+    <!-- / FUSE Splash Screen CSS -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5G92J9X"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- FUSE Splash Screen -->
+    <fuse-splash-screen id="fuse-splash-screen">
+        <div class="center">
+            <div class="logo">
+                <img width="128" src="assets/images/logo/logoBettics5.png">
+            </div>
+
+            <div class="texto-informativo mt-12">
+                Cargando... Por favor espere
+            </div>
+        </div>
+    </fuse-splash-screen>
+    <!-- / FUSE Splash Screen -->
+    <app-root></app-root>
+    <script src="https://checkout.culqi.com/js/v4"></script>
+    <script>
+        function culqi() {
+            if (Culqi.token) {
+                var payment_event = new CustomEvent("payment_event", {
+                    detail: Culqi.token,
+                });
+                document.dispatchEvent(payment_event);
+                document.getElementById("culqi_checkout_frame").remove();
+            }
+        }
+    </script>
+</body>
+
+</html>

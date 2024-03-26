@@ -1,0 +1,48 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { InterceptorService } from './shared/service/intereptor.service';
+import { FooterPageComponent } from './shared/pages/footer-page/footer-page.component';
+import { HeaderPageComponent } from './shared/pages/header-page/header-page.component';
+import { BodyPageComponent } from './shared/pages/body-page/body-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderAccountPageComponent } from './shared/pages/header-account-page/header-account-page.component';
+import { BodyAccountPageComponent } from './shared/pages/body-account-page/body-account-page.component';
+import { LoginGuardGuard } from './shared/guards/login-guard.guard';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { FooterAccountPageComponent } from './shared/pages/footer-account-page/footer-account-page.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    FooterPageComponent,
+    HeaderPageComponent,
+    BodyPageComponent,
+    HeaderAccountPageComponent,
+    FooterAccountPageComponent,
+    BodyAccountPageComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+  ],
+  providers: [
+    LoginGuardGuard,
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    }
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
