@@ -33,8 +33,8 @@
                         <div class="row px-1">
                             <div class="col-lg-6">
                                 <label class="mb-1"><h6 class="mb-0 text-sm">Celular</h6></label>
-                                <ngx-intl-tel-input [cssClass]="'custom'" [preferredCountries]="preferredCountries" [enableAutoCountrySelect]="false" [enablePlaceholder]="true" [searchCountryFlag]="true" [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]" [selectFirstCountry]="false"
-                                    [selectedCountryISO]="CountryISO.Peru" [maxLength]="100" [phoneValidation]="true" [separateDialCode]="true" formControlName="celular" [onlyCountries]="onlyCountries"></ngx-intl-tel-input>
+                                <ngx-intl-tel-input [cssClass]="'custom'"   [enableAutoCountrySelect]="false" [enablePlaceholder]="true" [searchCountryFlag]="true" [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]" [selectFirstCountry]="false"
+                                    [selectedCountryISO]="CountryISO.Peru" [maxLength]="100" [phoneValidation]="true" [separateDialCode]="true" formControlName="celular"  ></ngx-intl-tel-input>
                                     <div *ngIf="submitted &&  formularioEntidad.controls['celular'].errors" class="invalid-feedback">
                                         <div>Debe ingresar número celular adecuado.</div>
                                     </div>
