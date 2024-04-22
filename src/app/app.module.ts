@@ -14,6 +14,7 @@ import { BodyAccountPageComponent } from './shared/pages/body-account-page/body-
 import { LoginGuardGuard } from './shared/guards/login-guard.guard';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { FooterAccountPageComponent } from './shared/pages/footer-account-page/footer-account-page.component';
+import { BodyHomePageComponent } from './shared/pages/body-home-page/body-home-page.component';
 
 @NgModule({
   declarations: [

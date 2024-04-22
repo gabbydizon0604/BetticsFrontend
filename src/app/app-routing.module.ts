@@ -18,16 +18,16 @@ const routes: Routes = [
     canActivate: [LoginGuardGuard]
 
   },
-  {
-    path: 'home',
-    component: BodyHomePageComponent,
-    children: [
-      {
-        path: '',
-        loadChildren: () => import('./main/home/home.module').then((m) => m.HomeModule)
-      }
-    ]
-  },
+  // {
+  //   path: 'home',
+  //   component: BodyHomePageComponent,
+  //   children: [
+  //     {
+  //       path: '',
+  //       loadChildren: () => import('./main/home/home.module').then((m) => m.HomeModule)
+  //     }
+  //   ]
+  // },
   {
     path: 'page',
     component: BodyPageComponent,
