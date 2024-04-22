@@ -8,6 +8,7 @@ function convertirMetaAd( data, callBack) {
         'ph': data.ph
         }});
     } catch (error) {
+        console.log("Error Microsoft Ads")
         console.log(error)
     }
 

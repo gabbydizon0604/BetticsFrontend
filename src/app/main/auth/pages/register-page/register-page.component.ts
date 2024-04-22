@@ -9,7 +9,6 @@ import { SwalAlertService } from 'src/app/shared/service/swal-alert.service';
 import { appAnimations } from 'src/app/shared/utils/animation';
 import { AuthService } from '../../services/auth.service';
 import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
-// declare function suscribirseCulqi(): any;
 declare function convertirMetaAd(data: any): any;
 
 @Component({
@@ -105,7 +104,6 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
       )
       .subscribe((response) => {
         convertirMetaAd({em: data.correoElectronico, ph: data.celular});
-
         // this._swalAlertService.swalEventoExitoso({ mensaje: 'Se registró correctamente su cuenta.' });
         this.ingresar(data);
       });
@@ -124,8 +122,6 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
           this._authService.actualizarStore();
           this._swalAlertService.swalEventoExitoso({ mensaje: 'Se registro correctamente su suscripción.' });
           this._router.navigate(['/cuenta/recomendacion']);
-
-          // suscribirseCulqi();//Por ahora no habra pago
         }
         else {
           this._swalAlertService.swalEventoUrgente({ mensaje: response.mensaje });
