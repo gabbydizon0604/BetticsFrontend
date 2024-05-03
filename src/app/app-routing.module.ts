@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, CanActivate } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { LoginGuardGuard } from './shared/guards/login-guard.guard';
 import { BodyAccountPageComponent } from './shared/pages/body-account-page/body-account-page.component';
