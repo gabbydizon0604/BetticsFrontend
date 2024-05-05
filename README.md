@@ -28,10 +28,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 flyctl auth login
+Ambiente de desarrollo
 flyctl deploy --config ./fly.dev.toml --local-only
 
 npm install --force --legacy-peer-deps
  
  Comentario
-
+Produccion
  flyctl deploy --local-only

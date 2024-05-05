@@ -20297,3 +20297,91 @@ html .header .header-inner .header-menu .main-menu.segundo .login {
     display: contents !important;
 }
 
+
+.carousel_item{
+    min-width: 100px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    display: block;
+    box-shadow: 0 1px 4px 0px rgba(0, 0, 0, .1);
+}
+
+.carousel_item{
+    min-width: 100px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    display: block;
+    box-shadow: 0 1px 4px 0px rgba(0, 0, 0, .1);
+}
+.carousel_heading {
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 15px;
+    position: relative;
+}
+
+.carousel_heading > .carousel_logo-box {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    bottom: 2px;
+    left: 5px;
+}
+.carousel_team {
+    grid-column: 2;
+}
+.carousel_item > .carousel_pred {
+    background-color: #13602f;
+    color: white;
+    font-weight: bold;
+    padding: 3px 5px;
+    font-size: 12px !important;
+}
+.carousel_item > .carousel_heading, .carousel_item > .carousel_pred {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    padding-left: 8px;
+    gap: 3px;
+}
+.carousel_item > div {
+    display: flex;
+    /* align-items: center; */
+    padding: 4px;
+}
+.carousel_item > .carousel_matchInfo {
+    font-size: 10px;
+    color: #4e4b4b;
+    font-weight: normal;
+    justify-content: space-between;
+    padding-left: 8px;
+}
+.carousel_item > div {
+    display: flex;
+    /* align-items: center; */
+    padding: 4px;
+}
+
+.carousel_matchInfo > .carousel_leagueInfo {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.carousel_leagueInfo > img {
+    max-width: 14px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 1px 1px rgb(0 0 1 / 10%);
+}
+.carousel_item:hover {
+    text-decoration: none;
+    background-color: #f1f1f1;
+    box-shadow: 0 1px 4px 0px rgba(0, 0, 0, .3);
+}

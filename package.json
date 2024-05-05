@@ -40,6 +40,7 @@
     "ngx-intl-tel-input-gg": "^1.0.10",
     "ngx-mask": "^14.2.3",
     "ngx-mat-intl-tel-input-v16": "^16.0.3",
+    "ngx-owl-carousel-o": "^16.0.0",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.4.29",
     "tslib": "^2.3.0",

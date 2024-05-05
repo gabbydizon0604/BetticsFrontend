@@ -15,6 +15,8 @@ import { LoginGuardGuard } from './shared/guards/login-guard.guard';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { FooterAccountPageComponent } from './shared/pages/footer-account-page/footer-account-page.component';
 import { BodyHomePageComponent } from './shared/pages/body-home-page/body-home-page.component';
+import { RouterModule } from '@angular/router';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { BodyHomePageComponent } from './shared/pages/body-home-page/body-home-p
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    RouterModule,
+    CarouselModule
   ],
   providers: [
     LoginGuardGuard,
