@@ -26,7 +26,7 @@ export class BodyHomePageComponent implements OnInit {
     nav: true,
     margin: 8,
     loop: true,
-    dots: true,
+    dots: false,
     autoplay: true,
     autoplayHoverPause: true,
     smartSpeed: 100,
