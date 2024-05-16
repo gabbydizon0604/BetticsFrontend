@@ -6,13 +6,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AccountRoutingModule } from './account-routing.module';
 import { EventLigaPageComponent } from './pages/event-liga-page/event-liga-page.component';
 import { TableroPosicionesPageComponent } from './pages/tablero-posiciones-page/tablero-posiciones-page.component';
+import { PartidosJugarPageComponent } from './pages/partidos-jugar/partidos-jugar-page.component';
+import { ResultadosPageComponent } from './pages/resultados/resultados-page.component';
 
 @NgModule({
   declarations: [
     SubscriptionPageComponent,
     ProfilePageComponent,
     EventLigaPageComponent,
-    TableroPosicionesPageComponent
+    TableroPosicionesPageComponent,
+    PartidosJugarPageComponent,
+    ResultadosPageComponent
   ],
   imports: [
     CommonModule,

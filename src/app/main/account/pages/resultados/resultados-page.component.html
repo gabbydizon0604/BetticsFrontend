@@ -7,7 +7,7 @@
                         <img class="uk-invisible" src="../../../../assets/images/head-bg.jpg" alt="" height="190" width="1920">
                         <div class="uk-position-cover uk-flex uk-flex-center head-title">
                             <h1>
-                                PREDICCIONES
+                                RESULTADOS
                             </h1>
                         </div>
                     </div>
@@ -20,7 +20,7 @@
     <ul class="uk-breadcrumb">
         <li><a>Cuenta</a>
         </li>
-        <li class="uk-active"><span>PREDICCIONES</span>
+        <li class="uk-active"><span>RESULTADOS</span>
         </li>
     </ul>
 </div>
@@ -78,28 +78,18 @@
                                     <th colspan="1" class=" text-center">Gol</th>
                                     <th colspan="1" class=" text-center">Tiro Puerta</th>
                                     <th colspan="1" class=" text-center">Tarj.</th>
-<!-- 
-                                    <th colspan="1" class="text-center">Corner</th>
-                                    <th colspan="1" class=" text-center">Gol</th>
-                                    <th colspan="1" class=" text-center">Tiro Puerta</th>
-                                    <th colspan="1" class=" text-center">Tarj.</th> -->
                                 </tr>
                                 <tr class="header-custom">
 
                                     <th scope="col" class="columna-fija">Fecha</th>
-                                    <!-- <th scope="col" class="columna-fija">Hora</th> -->
                                     <th scope="col" class="columna-fija">Equipo Local</th>
                                     <th scope="col" class="columna-fija">Equipo Visitante</th>
                                     <td class="columna-fija celdaAsignado">
                                     </td>
                                     <th scope="col">+7.5</th>
-                                    <!-- <th scope="col">+2.5</th> -->
                                     <th scope="col">+1.5</th>
                                     <th scope="col">+6.5</th>
                                     <th scope="col">+2.5</th>
-                                    <!-- <th scope="col">+1.5</th>
-                                    <th scope="col">+5.5</th>
-                                    <th scope="col">+2.5</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -108,7 +98,6 @@
                                     <tr data-bs-toggle="collapse" [attr.data-bs-target]="'#r'+ i" class="accordion-toggle content-table">
 
                                         <td class="columna-fija celdaAsignado">{{item.fecha}}</td>
-                                        <!-- <td class="columna-fija celdaAsignado">{{item.hora}}</td> -->
                                         <td class="columna-fija celdaAsignado">{{item.equipoLocal}}</td>
                                         <td class="columna-fija celdaAsignado">{{item.equipoVisitante}}</td>
                                         <td class="columna-fija celdaAsignadoEstadisticas">
@@ -116,20 +105,11 @@
                                                 <a class="linkEstadisticas" [routerLink]="['/cuenta/estadisticas']" [queryParams]="{liga:item.liga ,idHomeTeam:item.idHomeTeam, equipoLocal: item.equipoLocal, idAwayTeam: item.idAwayTeam, equipoVisitante: item.equipoVisitante }"> <i class="bi bi-clipboard-data"></i></a>
                                             </strong>
                                         </td>
-                                        <!-- <td [ngClass]="{ 'labelExistoso': item.labelCornersProbabilidadMas6==='labelExistoso' , 'labelFallido' : item.labelCornersProbabilidadMas6==='labelFallido'  , 'labelMedio' : item.labelCornersProbabilidadMas6==='labelMedio'} ">{{item.cornersProbabilidadMas6}} %</td> -->
-                                        <!-- <td [ngClass]="{ 'labelExistoso': item.labelGolesProbabilidadMas6==='labelExistoso' , 'labelFallido' : item.labelGolesProbabilidadMas6==='labelFallido'  , 'labelMedio' : item.labelGolesProbabilidadMas6==='labelMedio'} ">{{item.golesProbabilidadMas6}} %</td> -->
-                                        <!-- <td class="celdaAsignado">{{item.cornersProbabilidadMas7}}%</td>
-                                        <td class="celdaAsignado">{{item.golesProbabilidadMas1}}%</td>
-                                        <td class="celdaAsignado">{{item.tirosaporteriaProb6}}%</td>
-                                        <td class="celdaAsignado">{{item.tarjetasProbabilidad3}}%</td> -->
                                         <td class="celdaAsignado" [ngClass]="{ 'labelRojo': item.labelCornersProbabilidadMas7==='rojo' , 'labelAmarilloSuave' : item.labelCornersProbabilidadMas7==='amarilloSuave'  , 'labelAmarilloIntenso' : item.labelCornersProbabilidadMas7==='amarilloIntenso', 'labelVerdeSuave' : item.labelCornersProbabilidadMas7==='verdeSuave', 'labelVerdeIntenso' : item.labelCornersProbabilidadMas7==='verdeIntenso'} ">{{item.cornersProbabilidadMas7}}%</td>
                                         <td class="celdaAsignado" [ngClass]="{ 'labelRojo': item.labelGolesProbabilidadMas1==='rojo' , 'labelAmarilloSuave' : item.labelGolesProbabilidadMas1==='amarilloSuave'  , 'labelAmarilloIntenso' : item.labelGolesProbabilidadMas1==='amarilloIntenso', 'labelVerdeSuave' : item.labelGolesProbabilidadMas1==='verdeSuave', 'labelVerdeIntenso' : item.labelGolesProbabilidadMas1==='verdeIntenso'} ">{{item.golesProbabilidadMas1}}%</td>
                                         <td class="celdaAsignado" [ngClass]="{ 'labelRojo': item.labelTirosaporteriaProb6==='rojo' , 'labelAmarilloSuave' : item.labelTirosaporteriaProb6==='amarilloSuave'  , 'labelAmarilloIntenso' : item.labelTirosaporteriaProb6==='amarilloIntenso', 'labelVerdeSuave' : item.labelTirosaporteriaProb6==='verdeSuave', 'labelVerdeIntenso' : item.labelTirosaporteriaProb6==='verdeIntenso'} ">{{item.tirosaporteriaProb6}}%</td>
                                         <td class="celdaAsignado" [ngClass]="{ 'labelRojo': item.labelTarjetasProbabilidad3==='rojo' , 'labelAmarilloSuave' : item.labelTarjetasProbabilidad3==='amarilloSuave'  , 'labelAmarilloIntenso' : item.labelTarjetasProbabilidad3==='amarilloIntenso', 'labelVerdeSuave' : item.labelTarjetasProbabilidad3==='verdeSuave', 'labelVerdeIntenso' : item.labelTarjetasProbabilidad3==='verdeIntenso'} ">{{item.tarjetasProbabilidad3}}%</td>
-                                        <!-- <td class="celdaAsignado">{{item.cornersLocalProbMas5}}</td>
-                                        <td class="celdaAsignado">{{item.golesLocalProbMas1}}</td>
-                                        <td class="celdaAsignado">{{item.tirosaporteriaLocalProb5}}</td>
-                                        <td class="celdaAsignado">{{item.tarjetasLocalProb2}}</td> -->
+
                                     </tr>
                                     <tr class="collapse accordion-collapse" [attr.id]="'r'+ i" data-bs-parent=".table">
                                         <td colspan="6">
@@ -176,10 +156,6 @@
                                                         </thead>
                                                         <tbody>
                                                             <tr class="accordion-toggle content-table">
-                                                                <!-- <td>{{item.cornersHechosLocal}}</td>
-                                                                <td>{{item.cornersRecibidosLocal}}</td>
-                                                                <td>{{item.cornersHechosVisita}}</td>
-                                                                <td>{{item.cornersRecibidosVisita}}</td> -->
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -219,10 +195,6 @@
                                                         </thead>
                                                         <tbody>
                                                             <tr class="accordion-toggle content-table">
-                                                                <!-- <td>{{item.golesHechosLocal}} </td>
-                                                                <td>{{item.golesRecibidosLocal}}</td>
-                                                                <td>{{item.golesRecibidosVisita }}</td>
-                                                                <td>{{item.golesHechosVisita}}</td> -->
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -243,28 +215,46 @@
                         <table class="table table-bordered table-hover table-custom">
                             <thead class="thead-custom">
                                 <tr class="header-custom thead-custom">
-                                    <th colspan="7" class="left-cell"> </th>
+                                    <th colspan="4" class="left-cell"> </th>
+                                    <div *ngIf="!verSoloResultados">
+                                        <th colspan="3"> </th>
+                                    </div>
                                     <th colspan="4" class="text-center">Probabilidad: Equipo Local + Visitante</th>
-                                    <th colspan="4" class="text-center">Cantidad Promedio: Equipo Local + Visitante</th>
-                                    <th colspan="4" class="text-center rigth-cell">Probabilidad: Equipo Local</th>
+                                    <div *ngIf="!verSoloResultados">
+                                        <th colspan="4" class="text-center">Cantidad Promedio: Equipo Local + Visitante</th>
+                                        <th colspan="4" class="text-center rigth-cell">Probabilidad: Equipo Local</th>
+                                    </div>
+                                    <th *ngIf="verSoloResultados" colspan="4" class="text-center">Resultados</th>
+
                                 </tr>
                                 <tr class="header-custom thead-custom">
                                     <th colspan="4 " class=""> </th>
-                                    <th colspan="2" class="text-center">Posición de tabla</th>
-                                    <th colspan="1 " class=""> </th>
+                                    <div *ngIf="!verSoloResultados">
+                                        <th colspan="2" class="text-center">Posición de tabla</th>
+                                        <th colspan="1 " class=""> </th>
+                                    </div>
 
                                     <th colspan="1" class="text-center">Esq.</th>
                                     <th colspan="1" class="text-center">Gol</th>
                                     <th colspan="1" class="text-center">Tiro Puerta</th>
                                     <th colspan="1" class="text-center">Tarj.</th>
-                                    <th rowspan="1" class="text-center">Esq.</th>
-                                    <th rowspan="1" class="text-center">Gol</th>
-                                    <th rowspan="1" class="text-center">Tiro Puerta</th>
-                                    <th rowspan="1" class="text-center">Tarj.</th>
-                                    <th rowspan="1" class="text-center">Esq.</th>
-                                    <th rowspan="1" class=" text-center">Gol</th>
-                                    <th rowspan="1" class=" text-center">Tiro Puerta</th>
-                                    <th rowspan="1" class=" text-center">Tarj.</th>
+
+                                    <div *ngIf="!verSoloResultados">
+                                        <th *ngIf="!verSoloResultados" rowspan="1" class="text-center">Esq.</th>
+                                        <th *ngIf="!verSoloResultados" rowspan="1" class="text-center">Gol</th>
+                                        <th *ngIf="!verSoloResultados" rowspan="1" class="text-center">Tiro Puerta</th>
+                                        <th *ngIf="!verSoloResultados" rowspan="1" class="text-center">Tarj.</th>
+                                        <th *ngIf="!verSoloResultados" rowspan="1" class="text-center">Esq.</th>
+                                        <th *ngIf="!verSoloResultados" rowspan="1" class=" text-center">Gol</th>
+                                        <th *ngIf="!verSoloResultados" rowspan="1" class=" text-center">Tiro Puerta</th>
+                                        <th *ngIf="!verSoloResultados" rowspan="1" class=" text-center">Tarj.</th>
+                                    </div>
+
+                                    <th *ngIf="verSoloResultados" colspan="1" class="text-center">Esq.</th>
+                                    <th *ngIf="verSoloResultados" colspan="1" class="text-center">Gol</th>
+                                    <th *ngIf="verSoloResultados" colspan="1" class="text-center">Tiro Puerta</th>
+                                    <th *ngIf="verSoloResultados" colspan="1" class="text-center">Tarj.</th>
+
                                 </tr>
                                 <tr class="header-custom thead-custom">
                                     <th scope="col" class="columna-fija">Fecha</th>
@@ -272,23 +262,33 @@
                                     <th scope="col" class="columna-fija">Equipo Local</th>
                                     <th scope="col" class="columna-fija">Equipo Visitante</th>
 
-                                    <th scope="col">Local</th>
-                                    <th scope="col">Visita</th>
-                                    <th scope="col" class="columna-fija"> </th>
+                                    <div *ngIf="!verSoloResultados">
+                                        <th scope="col">Local</th>
+                                        <th scope="col">Visita</th>
+                                        <th scope="col" class="columna-fija"> </th>
+                                    </div>
 
-                                    <th scope="col">+7.5</th>
-                                    <th scope="col">+1.5</th>
-                                    <th scope="col">+6.5</th>
-                                    <th scope="col">+2.5</th>
+                                        <th scope="col">+7.5</th>
+                                        <th scope="col">+1.5</th>
+                                        <th scope="col">+6.5</th>
+                                        <th scope="col">+2.5</th>
 
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                    <th scope="col">+3.5</th>
-                                    <th scope="col">+0.5</th>
-                                    <th scope="col">+3.5</th>
-                                    <th scope="col">+1.5</th>
+                                    <div *ngIf="!verSoloResultados">
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                        <th scope="col">+3.5</th>
+                                        <th scope="col">+0.5</th>
+                                        <th scope="col">+3.5</th>
+                                        <th scope="col">+1.5</th>
+                                    </div>
+
+                                    <th *ngIf="verSoloResultados" scope="col">+7.5</th>
+                                    <th *ngIf="verSoloResultados" scope="col">+1.5</th>
+                                    <th *ngIf="verSoloResultados" scope="col">+6.5</th>
+                                    <th *ngIf="verSoloResultados" scope="col">+2.5</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -299,28 +299,43 @@
                                     <td class="columna-fija celdaAsignado">{{item.equipoLocal}}</td>
                                     <td class="columna-fija celdaAsignado">{{item.equipoVisitante}}</td>
                                     
-                                    <td [ngClass]="{ 'colorPosicionLocalPrimeros': item.colorPosicionLocal==='colorPosicionLocalPrimeros' , 'colorPosicionLocalSegundos' : item.colorPosicionLocal==='colorPosicionLocalSegundos'  , 'colorPosicionLocalTerceros' : item.colorPosicionLocal==='colorPosicionLocalTerceros' , 'colorPosicionLocalCuartos' : item.colorPosicionLocal==='colorPosicionLocalCuartos'} ">{{item.posicionLocal}}</td>
-                                    <td [ngClass]="{ 'colorPosicionLocalPrimeros': item.colorPosicionVisita==='colorPosicionLocalPrimeros' , 'colorPosicionLocalSegundos' : item.colorPosicionVisita==='colorPosicionLocalSegundos'  , 'colorPosicionLocalTerceros' : item.colorPosicionVisita==='colorPosicionLocalTerceros' , 'colorPosicionLocalCuartos' : item.colorPosicionVisita==='colorPosicionLocalCuartos'} ">{{item.posicionVisita}}</td>
+                                    <div *ngIf="!verSoloResultados">
+                                        <td [ngClass]="{ 'colorPosicionLocalPrimeros': item.colorPosicionLocal==='colorPosicionLocalPrimeros' , 'colorPosicionLocalSegundos' : item.colorPosicionLocal==='colorPosicionLocalSegundos'  , 'colorPosicionLocalTerceros' : item.colorPosicionLocal==='colorPosicionLocalTerceros' , 'colorPosicionLocalCuartos' : item.colorPosicionLocal==='colorPosicionLocalCuartos'} ">{{item.posicionLocal}}</td>
+                                        <td [ngClass]="{ 'colorPosicionLocalPrimeros': item.colorPosicionVisita==='colorPosicionLocalPrimeros' , 'colorPosicionLocalSegundos' : item.colorPosicionVisita==='colorPosicionLocalSegundos'  , 'colorPosicionLocalTerceros' : item.colorPosicionVisita==='colorPosicionLocalTerceros' , 'colorPosicionLocalCuartos' : item.colorPosicionVisita==='colorPosicionLocalCuartos'} ">{{item.posicionVisita}}</td>
+    
+                                        <td class="columna-fija celdaAsignadoEstadisticas">
+                                            <strong>
+                                            <a class="linkEstadisticas" [routerLink]="['/cuenta/estadisticas']" [queryParams]="{liga:item.liga ,idHomeTeam:item.idHomeTeam, equipoLocal: item.equipoLocal, idAwayTeam: item.idAwayTeam, equipoVisitante: item.equipoVisitante }"> <i class="bi bi-clipboard-data"></i></a>
+                                           </strong>
+                                        </td>
+                                    </div>
 
-                                    <td class="columna-fija celdaAsignadoEstadisticas">
-                                        <strong>
-                                        <a class="linkEstadisticas" [routerLink]="['/cuenta/estadisticas']" [queryParams]="{liga:item.liga ,idHomeTeam:item.idHomeTeam, equipoLocal: item.equipoLocal, idAwayTeam: item.idAwayTeam, equipoVisitante: item.equipoVisitante }"> <i class="bi bi-clipboard-data"></i></a>
-                                       </strong>
-                                    </td>
                                     <td [ngClass]="{ 'labelRojo': item.labelCornersProbabilidadMas7==='rojo' , 'labelAmarilloSuave' : item.labelCornersProbabilidadMas7==='amarilloSuave'  , 'labelAmarilloIntenso' : item.labelCornersProbabilidadMas7==='amarilloIntenso', 'labelVerdeSuave' : item.labelCornersProbabilidadMas7==='verdeSuave', 'labelVerdeIntenso' : item.labelCornersProbabilidadMas7==='verdeIntenso'} ">{{item.cornersProbabilidadMas7}}%</td>
                                     <td [ngClass]="{ 'labelRojo': item.labelGolesProbabilidadMas1==='rojo' , 'labelAmarilloSuave' : item.labelGolesProbabilidadMas1==='amarilloSuave'  , 'labelAmarilloIntenso' : item.labelGolesProbabilidadMas1==='amarilloIntenso', 'labelVerdeSuave' : item.labelGolesProbabilidadMas1==='verdeSuave', 'labelVerdeIntenso' : item.labelGolesProbabilidadMas1==='verdeIntenso'} ">{{item.golesProbabilidadMas1}}%</td>
                                     <td [ngClass]="{ 'labelRojo': item.labelTirosaporteriaProb6==='rojo' , 'labelAmarilloSuave' : item.labelTirosaporteriaProb6==='amarilloSuave'  , 'labelAmarilloIntenso' : item.labelTirosaporteriaProb6==='amarilloIntenso', 'labelVerdeSuave' : item.labelTirosaporteriaProb6==='verdeSuave', 'labelVerdeIntenso' : item.labelTirosaporteriaProb6==='verdeIntenso'} ">{{item.tirosaporteriaProb6}}%</td>
                                     <td [ngClass]="{ 'labelRojo': item.labelTarjetasProbabilidad3==='rojo' , 'labelAmarilloSuave' : item.labelTarjetasProbabilidad3==='amarilloSuave'  , 'labelAmarilloIntenso' : item.labelTarjetasProbabilidad3==='amarilloIntenso', 'labelVerdeSuave' : item.labelTarjetasProbabilidad3==='verdeSuave', 'labelVerdeIntenso' : item.labelTarjetasProbabilidad3==='verdeIntenso'} ">{{item.tarjetasProbabilidad3}}%</td>
                                     
-                                    <td>{{item.cornersHechoTotalesLocalVisita}}</td>
-                                    <td>{{item.golesHechoTotalesLocalVisita}}</td>
-                                    <td>{{item.tirosaporteriaTotalProm}}</td>
-                                    <td >{{item.tarjetasTotalProm}}</td>
+                                    <div *ngIf="!verSoloResultados">
 
-                                    <td [ngClass]="{ 'labelRojo': item.labelCornersLocalProbMas5==='rojo' , 'labelAmarilloSuave' : item.labelCornersLocalProbMas5==='amarilloSuave'  , 'labelAmarilloIntenso' : item.labelCornersLocalProbMas5==='amarilloIntenso', 'labelVerdeSuave' : item.labelCornersLocalProbMas5==='verdeSuave', 'labelVerdeIntenso' : item.labelCornersLocalProbMas5==='verdeIntenso'} ">{{item.cornersLocalProbMas5}}%</td>
-                                    <td [ngClass]="{ 'labelRojo': item.labelGolesLocalProbMas1==='rojo' , 'labelAmarilloSuave' : item.labelGolesLocalProbMas1==='amarilloSuave'  , 'labelAmarilloIntenso' : item.labelGolesLocalProbMas1==='amarilloIntenso', 'labelVerdeSuave' : item.labelGolesLocalProbMas1==='verdeSuave', 'labelVerdeIntenso' : item.labelGolesLocalProbMas1==='verdeIntenso'} ">{{item.golesLocalProbMas1}}%</td>
-                                    <td [ngClass]="{ 'labelRojo': item.labelTirosaporteriaLocalProb5==='rojo' , 'labelAmarilloSuave' : item.labelTirosaporteriaLocalProb5==='amarilloSuave'  , 'labelAmarilloIntenso' : item.labelTirosaporteriaLocalProb5==='amarilloIntenso', 'labelVerdeSuave' : item.labelTirosaporteriaLocalProb5==='verdeSuave', 'labelVerdeIntenso' : item.labelTirosaporteriaLocalProb5==='verdeIntenso'} ">{{item.tirosaporteriaLocalProb5}}%</td>
-                                    <td [ngClass]="{ 'labelRojo': item.labelTarjetasLocalProb2==='rojo' , 'labelAmarilloSuave' : item.labelTarjetasLocalProb2==='amarilloSuave'  , 'labelAmarilloIntenso' : item.labelTarjetasLocalProb2==='amarilloIntenso', 'labelVerdeSuave' : item.labelTarjetasLocalProb2==='verdeSuave', 'labelVerdeIntenso' : item.labelTarjetasLocalProb2==='verdeIntenso'} ">{{item.tarjetasLocalProb2}}%</td>
+                                        <td>{{item.cornersHechoTotalesLocalVisita}}</td>
+                                        <td>{{item.golesHechoTotalesLocalVisita}}</td>
+                                        <td>{{item.tirosaporteriaTotalProm}}</td>
+                                        <td >{{item.tarjetasTotalProm}}</td>
+
+                                        <td [ngClass]="{ 'labelRojo': item.labelCornersLocalProbMas5==='rojo' , 'labelAmarilloSuave' : item.labelCornersLocalProbMas5==='amarilloSuave'  , 'labelAmarilloIntenso' : item.labelCornersLocalProbMas5==='amarilloIntenso', 'labelVerdeSuave' : item.labelCornersLocalProbMas5==='verdeSuave', 'labelVerdeIntenso' : item.labelCornersLocalProbMas5==='verdeIntenso'} ">{{item.cornersLocalProbMas5}}%</td>
+                                        <td [ngClass]="{ 'labelRojo': item.labelGolesLocalProbMas1==='rojo' , 'labelAmarilloSuave' : item.labelGolesLocalProbMas1==='amarilloSuave'  , 'labelAmarilloIntenso' : item.labelGolesLocalProbMas1==='amarilloIntenso', 'labelVerdeSuave' : item.labelGolesLocalProbMas1==='verdeSuave', 'labelVerdeIntenso' : item.labelGolesLocalProbMas1==='verdeIntenso'} ">{{item.golesLocalProbMas1}}%</td>
+                                        <td [ngClass]="{ 'labelRojo': item.labelTirosaporteriaLocalProb5==='rojo' , 'labelAmarilloSuave' : item.labelTirosaporteriaLocalProb5==='amarilloSuave'  , 'labelAmarilloIntenso' : item.labelTirosaporteriaLocalProb5==='amarilloIntenso', 'labelVerdeSuave' : item.labelTirosaporteriaLocalProb5==='verdeSuave', 'labelVerdeIntenso' : item.labelTirosaporteriaLocalProb5==='verdeIntenso'} ">{{item.tirosaporteriaLocalProb5}}%</td>
+                                        <td [ngClass]="{ 'labelRojo': item.labelTarjetasLocalProb2==='rojo' , 'labelAmarilloSuave' : item.labelTarjetasLocalProb2==='amarilloSuave'  , 'labelAmarilloIntenso' : item.labelTarjetasLocalProb2==='amarilloIntenso', 'labelVerdeSuave' : item.labelTarjetasLocalProb2==='verdeSuave', 'labelVerdeIntenso' : item.labelTarjetasLocalProb2==='verdeIntenso'} ">{{item.tarjetasLocalProb2}}%</td>
+
+                                    </div>
+
+                                    <div *ngIf="verSoloResultados">
+                                        <td>{{item.cornerstotalesresultado}}</td>
+                                        <td>{{item.golestotalesresultado}}</td>
+                                        <td>{{item.tirosaporteriatotalresultado}}</td>
+                                        <td >{{item.tarjetastotalresultado}}</td>
+                                    </div>
+
                                 </tr>
                             </tbody>
                         </table>

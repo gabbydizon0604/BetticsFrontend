@@ -13274,7 +13274,7 @@ q {
 }
 
 .tm-logo>img {
-    margin-top: 15px;
+    margin-top: 0px;
     vertical-align: top;
     display: inline-block;
     transform: rotate(0);
@@ -13410,7 +13410,7 @@ q {
     font-size: 15px;
     color: #fff;
     text-transform: uppercase;
-    line-height: 70px;
+    line-height: 45px;
 }
 
 .uk-navbar-nav>li:hover>a {
@@ -14552,7 +14552,7 @@ q {
 }
 
 .head-title {
-    top: 50%;
+    top: 45%;
 }
 
 .head-title h1 {

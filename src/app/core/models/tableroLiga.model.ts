@@ -46,5 +46,10 @@ export class TableroPosicionesModel {
     public labelGolesLocalProbMas1: string;
     public labelTirosaporteriaLocalProb5: string;
     public labelTarjetasLocalProb2: string;
+
+    public cornerstotalesresultado: Number;
+    public golestotalesresultado: Number;
+    public tirosaporteriatotalresultado: Number;
+    public tarjetastotalresultado: Number;
     
 }

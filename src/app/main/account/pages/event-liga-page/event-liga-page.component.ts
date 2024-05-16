@@ -465,7 +465,11 @@ export class EventLigaPageComponent implements OnInit {
           let numero = 0
           if (element.includes("-")){
             numero = element.split('-')[1]
-          }else{
+          }
+          else if (element.includes("/")){
+            numero = element.split('/')[1]
+          }
+          else{
             numero = element.split('-')[0]
           }
           if (max < numero)
