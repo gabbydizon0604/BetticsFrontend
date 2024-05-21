@@ -16,11 +16,15 @@ export class Constantes {
         account: {
             Recomendaciones: '/api/recomendaciones/getCriterio',
             TableroPosiciones: '/api/tableroPosiciones/getCriterio',
+            Resultados: '/api/resultados/getCriterio',
             Maestros: '/api/eventosLiga/getMaestros',
             Equipos: '/api/eventosLiga/getEquipos',
             Temporadas: '/api/eventosLiga/getTemporadas',
             MaestrosPosiciones: '/api/tableroPosiciones/getMaestros',
-            EventosLiga: '/api/eventosLiga/getCriterio'
+            MaestrosPartidosJugar: '/api/partidosJugar/getMaestros',
+            MaestrosResultados: '/api/resultados/getMaestros',
+            EventosLiga: '/api/eventosLiga/getCriterio',
+            PartidosJugar: '/api/partidosJugar/getCriterio'
         },
         email: {
             enviarmensajesoporte: '/api/email/enviarmensajesoporte',

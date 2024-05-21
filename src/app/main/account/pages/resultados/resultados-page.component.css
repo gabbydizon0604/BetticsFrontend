@@ -283,3 +283,18 @@ body {
     -webkit-text-stroke-color: #228B22;
     -webkit-text-stroke-width: 1px;
 }
+
+.labelAzulResultado {
+    background-color: #ffffff;
+    color: #0070c0 !important;
+    -webkit-text-fill-color: #0070c0;
+    -webkit-text-stroke-color: #0070c0;
+    -webkit-text-stroke-width: 1px;
+}
+.labelRojoResultado {
+    background-color: #ffffff;
+    color: #800020 !important;
+    -webkit-text-fill-color: #800020;
+    -webkit-text-stroke-color: #800020;
+    -webkit-text-stroke-width: 1px;
+}

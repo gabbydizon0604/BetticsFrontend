@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RecommendationsService } from '../../services/recommendations.service';
 import { forkJoin, merge, Subject, takeUntil, BehaviorSubject, fromEvent, debounceTime } from 'rxjs';
 import { TableroPosicionesModel } from 'src/app/core/models/tableroLiga.model';
-import { TableroPosicionesService } from '../../services/tableroPosiciones.service';
+import { ResultadosService } from '../../services/resultados.service';
 
 @Component({
   selector: 'app-resultados-page',
@@ -13,6 +13,7 @@ export class ResultadosPageComponent implements OnInit {
 
   _unsubscribeAll: Subject<any>;
   tableroPosiciones: TableroPosicionesModel[] = [];
+  datosOriginales: TableroPosicionesModel[] = [];
   listadoLiga: any[] = [];
   equiposLocales: any[] = [];
   equiposVisitas: any[] = [];
@@ -21,6 +22,11 @@ export class ResultadosPageComponent implements OnInit {
 
   strLeague: any[] = [];
   strLeagueSelected: any;
+  strFecha: any;
+  strFechaSelected: any;
+  resumenAciertos: any;
+  resumenFallos: any;
+  resumenPorcentaje: any;
 
   public screenWidth$: BehaviorSubject<any> = new BehaviorSubject(null);
   public mediaBreakpoint$: BehaviorSubject<any> = new BehaviorSubject(null);
@@ -29,7 +35,7 @@ export class ResultadosPageComponent implements OnInit {
   verSoloResultados = true;
 
   constructor(
-    private _tableroPosicionesService: TableroPosicionesService,
+    private _resultadosService: ResultadosService,
   ) {
     this._unsubscribeAll = new Subject();
     console.log('TableroPosicionesPageComponent')
@@ -41,7 +47,7 @@ export class ResultadosPageComponent implements OnInit {
       pageSize: 20
     };
     forkJoin([
-      this._tableroPosicionesService.obtenerMaestros(criterioBusqueda2),
+      this._resultadosService.obtenerMaestros(criterioBusqueda2),
     ])
       .pipe(
         takeUntil(this._unsubscribeAll)
@@ -78,7 +84,7 @@ export class ResultadosPageComponent implements OnInit {
       strLeague: this.strLeagueSelected
     };
     forkJoin([
-      this._tableroPosicionesService.obtenerListado(criterioBusqueda),
+      this._resultadosService.obtenerListado(criterioBusqueda),
     ])
       .pipe(
         takeUntil(this._unsubscribeAll)
@@ -87,19 +93,6 @@ export class ResultadosPageComponent implements OnInit {
 
 
         rest[0].resResult.forEach((element: any) => {
-          // if (element.cornersProbabilidadMas7 < 70) {
-          //   element.labelCornersProbabilidadMas7 = 'rojo'
-          // } else if (element.cornersProbabilidadMas7 >= 70 && element.cornersProbabilidadMas7 < 75) {
-          //   element.labelCornersProbabilidadMas7 = 'amarilloSuave'
-          // } 
-          // else if (element.cornersProbabilidadMas7 >= 75 && element.cornersProbabilidadMas7 <= 77) {
-          //   element.labelCornersProbabilidadMas7 = 'amarilloIntenso'
-          // } else if (element.cornersProbabilidadMas7 > 77 && element.cornersProbabilidadMas7 <= 82) {
-          //   element.labelCornersProbabilidadMas7 = 'verdeSuave'
-          // } 
-          // else {
-          //   element.labelCornersProbabilidadMas7 = 'verdeIntenso'
-          // }
           element = this.calcularLabelPorcentajes(element, 'cornersProbabilidadMas7', 'labelCornersProbabilidadMas7')
           element = this.calcularLabelPorcentajes(element, 'golesProbabilidadMas1', 'labelGolesProbabilidadMas1')
           element = this.calcularLabelPorcentajes(element, 'tirosaporteriaProb6', 'labelTirosaporteriaProb6')
@@ -108,7 +101,14 @@ export class ResultadosPageComponent implements OnInit {
           element = this.calcularLabelPorcentajes(element, 'golesLocalProbMas1', 'labelGolesLocalProbMas1')
           element = this.calcularLabelPorcentajes(element, 'tirosaporteriaLocalProb5', 'labelTirosaporteriaLocalProb5')
           element = this.calcularLabelPorcentajes(element, 'tarjetasLocalProb2', 'labelTarjetasLocalProb2')
+          element = this.calcularLabelResultado(element, 'cornerstotalesresultado')
+          element = this.calcularLabelResultado(element, 'golestotalesresultado')
+          element = this.calcularLabelResultado(element, 'tirosaporteriatotalresultado')
+          element = this.calcularLabelResultado(element, 'tarjetastotalresultado')
         });
+
+        this.strFecha = [...new Set(rest[0].resResult.map((item:any) => item.fecha))];
+        this.calcularResumen(rest[0].resResult);
 
         rest[0].resResult.forEach((element: any) => {
 
@@ -140,6 +140,7 @@ export class ResultadosPageComponent implements OnInit {
         });
 
         this.tableroPosiciones = rest[0].resResult;
+        this.datosOriginales = rest[0].resResult;
       });
   }
 
@@ -163,6 +164,66 @@ export class ResultadosPageComponent implements OnInit {
     }
 
     return element;
+  }
+
+  calcularLabelResultado(element: any, label:any):void {
+    if (element["cornerstotalesresultado"] > 7.5 && element["cornersProbabilidadMas7"]> 77) {
+      element["labelCornerstotalesresultado"] = 'azul'
+    }else if(element["cornerstotalesresultado"] < 7.5  && element["cornersProbabilidadMas7"]> 77){
+      element["labelCornerstotalesresultado"] = 'rojo'
+    }
+    if (element["golestotalesresultado"] > 1.5 && element["golesProbabilidadMas1"]> 77) {
+      element["labelGolestotalesresultado"] = 'azul'
+    }else if(element["golestotalesresultado"] < 1.5  && element["golesProbabilidadMas1"]> 77){
+      element["labelGolestotalesresultado"] = 'rojo'
+    }
+
+    if (element["tirosaporteriatotalresultado"] > 6.5 && element["tirosaporteriaProb6"]> 77) {
+      element["labelTirosaporteriatotalresultado"] = 'azul'
+    }
+    else if(element["tirosaporteriatotalresultado"] < 6.5  && element["tirosaporteriaProb6"]> 77){
+      element["labelTirosaporteriatotalresultado"] = 'rojo'
+    }
+
+    if (element["tarjetastotalresultado"] > 2.5 && element["tarjetasProbabilidad3"]> 77) {
+      element["labelTarjetastotalresultado"] = 'azul'
+    }else if(element["tarjetastotalresultado"] < 2.5  && element["tarjetasProbabilidad3"]> 77){
+      element["labelTarjetastotalresultado"] = 'rojo'
+    }
+    return element;
+  }
+
+  calcularResumen(listaRegistros: any):void {
+      // Aciertos
+      const cornersAciertoResumen =  listaRegistros.filter((x:any) => x.labelCornerstotalesresultado == 'azul').length;
+      const golesAciertoResumen =  listaRegistros.filter((x:any) => x.labelGolestotalesresultado == 'azul').length;
+      const tirosAciertoResumen =  listaRegistros.filter((x:any) => x.labelTirosaporteriatotalresultado == 'azul').length;
+      const tarjetasAciertoResumen =  listaRegistros.filter((x:any) => x.labelTarjetastotalresultado == 'azul').length;
+      this.resumenAciertos = {
+        cornersAciertoResumen: cornersAciertoResumen,
+        golesAciertoResumen: golesAciertoResumen,
+        tirosAciertoResumen: tirosAciertoResumen,
+        tarjetasAciertoResumen: tarjetasAciertoResumen
+      }
+      // Aciertos
+      const cornersFalloResumen =  listaRegistros.filter((x:any) => x.labelCornerstotalesresultado == 'rojo').length;
+      const golesFalloResumenoResumen =  listaRegistros.filter((x:any) => x.labelGolestotalesresultado == 'rojo').length;
+      const tirosFalloResumen =  listaRegistros.filter((x:any) => x.labelTirosaporteriatotalresultado == 'rojo').length;
+      const tarjetasFalloResumen =  listaRegistros.filter((x:any) => x.labelTarjetastotalresultado == 'rojo').length;
+
+      this.resumenFallos = {
+        cornersFalloResumen: cornersFalloResumen,
+        golesFalloResumenoResumen: golesFalloResumenoResumen,
+        tirosFalloResumen: tirosFalloResumen,
+        tarjetasFalloResumen: tarjetasFalloResumen
+      }
+
+      this.resumenPorcentaje = {
+        corners: ((cornersAciertoResumen * 100 )/( cornersAciertoResumen + cornersFalloResumen)) || 0,
+        goles: ((golesAciertoResumen * 100 )/( golesAciertoResumen + golesFalloResumenoResumen)) || 0,
+        tiros:((tirosAciertoResumen * 100 )/( tirosAciertoResumen + tirosFalloResumen)) || 0,
+        tarjetas: ((tarjetasAciertoResumen * 100 )/( tarjetasAciertoResumen + tarjetasFalloResumen)) || 0,
+      }
   }
 
   init() {
@@ -204,5 +265,15 @@ export class ResultadosPageComponent implements OnInit {
   }
   ngOnDestroy() {
     this._unsubscriber$.complete();
+  }
+
+  filtrarResultados(): void {
+    // this.cargarTemporadas(false);
+    // this.strFechaSelected = null;
+    this.tableroPosiciones = this.datosOriginales.filter((x:any) => x.fecha == this.strFechaSelected);
+    console.log(this.tableroPosiciones);
+    this.calcularResumen(this.tableroPosiciones);
+
+    // this.cargarEquipos(false);
   }
 }

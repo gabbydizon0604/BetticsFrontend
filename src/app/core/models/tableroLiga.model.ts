@@ -51,5 +51,16 @@ export class TableroPosicionesModel {
     public golestotalesresultado: Number;
     public tirosaporteriatotalresultado: Number;
     public tarjetastotalresultado: Number;
+
+    public labelCornerstotalesresultado: string;
+    public labelGolestotalesresultado: string;
+    public labelTirosaporteriatotalresultado: string;
+    public labelTarjetastotalresultado: string;
+
+    public home_image: string;
+    public away_image: string;
+    public pais_imagen: string;
+
+
     
 }

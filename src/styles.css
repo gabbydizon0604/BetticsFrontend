@@ -19780,7 +19780,7 @@ ul.uk-switcher {
     }
     .uk-navbar-toggle {
         float: right;
-        margin-top: 10px;
+        margin-top: 0px;
     }
     .uk-navbar-toggle:after {
         color: #ffc722;

@@ -3,6 +3,7 @@ import { RecommendationsService } from '../../services/recommendations.service';
 import { forkJoin, merge, Subject, takeUntil, BehaviorSubject, fromEvent, debounceTime } from 'rxjs';
 import { TableroPosicionesModel } from 'src/app/core/models/tableroLiga.model';
 import { TableroPosicionesService } from '../../services/tableroPosiciones.service';
+import { PartidosJugarService } from '../../services/partidosJugar.service';
 
 @Component({
   selector: 'app-partidos-jugar-page',
@@ -27,7 +28,7 @@ export class PartidosJugarPageComponent implements OnInit {
   private _unsubscriber$: Subject<any> = new Subject();
 
   constructor(
-    private _tableroPosicionesService: TableroPosicionesService,
+    private _partidosJugarService: PartidosJugarService,
   ) {
     this._unsubscribeAll = new Subject();
     console.log('TableroPosicionesPageComponent')
@@ -39,7 +40,7 @@ export class PartidosJugarPageComponent implements OnInit {
       pageSize: 20
     };
     forkJoin([
-      this._tableroPosicionesService.obtenerMaestros(criterioBusqueda2),
+      this._partidosJugarService.obtenerMaestros(criterioBusqueda2),
     ])
       .pipe(
         takeUntil(this._unsubscribeAll)
@@ -76,28 +77,14 @@ export class PartidosJugarPageComponent implements OnInit {
       strLeague: this.strLeagueSelected
     };
     forkJoin([
-      this._tableroPosicionesService.obtenerListado(criterioBusqueda),
+      this._partidosJugarService.obtenerListado(criterioBusqueda),
     ])
       .pipe(
         takeUntil(this._unsubscribeAll)
       )
       .subscribe((rest: any) => {
 
-
         rest[0].resResult.forEach((element: any) => {
-          // if (element.cornersProbabilidadMas7 < 70) {
-          //   element.labelCornersProbabilidadMas7 = 'rojo'
-          // } else if (element.cornersProbabilidadMas7 >= 70 && element.cornersProbabilidadMas7 < 75) {
-          //   element.labelCornersProbabilidadMas7 = 'amarilloSuave'
-          // } 
-          // else if (element.cornersProbabilidadMas7 >= 75 && element.cornersProbabilidadMas7 <= 77) {
-          //   element.labelCornersProbabilidadMas7 = 'amarilloIntenso'
-          // } else if (element.cornersProbabilidadMas7 > 77 && element.cornersProbabilidadMas7 <= 82) {
-          //   element.labelCornersProbabilidadMas7 = 'verdeSuave'
-          // } 
-          // else {
-          //   element.labelCornersProbabilidadMas7 = 'verdeIntenso'
-          // }
           element = this.calcularLabelPorcentajes(element, 'cornersProbabilidadMas7', 'labelCornersProbabilidadMas7')
           element = this.calcularLabelPorcentajes(element, 'golesProbabilidadMas1', 'labelGolesProbabilidadMas1')
           element = this.calcularLabelPorcentajes(element, 'tirosaporteriaProb6', 'labelTirosaporteriaProb6')
