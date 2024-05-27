@@ -80,6 +80,8 @@ export class EventLigaPageComponent implements OnInit {
   public mediaBreakpoint$: BehaviorSubject<any> = new BehaviorSubject(null);
   private _unsubscriber$: Subject<any> = new Subject();
 
+  porcentajeFiltro: any = {}
+
   constructor(
     private _eventoLigaService: EventoLigaService,
     private route: ActivatedRoute
@@ -489,6 +491,14 @@ export class EventLigaPageComponent implements OnInit {
   tabActual: any = 1
 
   onTab(tab:any): void {
+    this.porcentajeFiltro = {
+      porcentaje2Equipos: "" ,
+      porcentajeUltimos6Home: "" ,
+      porcentajeUltimos6Away: "" ,
+      porcentajeSoloLocal: "" ,
+      porcentajeSoloVisita: "" 
+    }
+    
     console.log(tab)
     this.limpiarFiltrado();
     this.tabActual = tab; 
@@ -577,6 +587,7 @@ export class EventLigaPageComponent implements OnInit {
       this.strHomeTeamSelected &&
       this.strAwayTeamSelected
       ) {
+
 
       this.strAwayTeamNameSelected = this.strAwayTeam.find(x => x.id == this.strAwayTeamSelected).descripcion
       this.strHomeTeamNameSelected = this.strHomeTeam.find(x => x.id == this.strHomeTeamSelected).descripcion
@@ -752,6 +763,27 @@ export class EventLigaPageComponent implements OnInit {
         element.filtroAplicado = false;
         element = this.retornarElementoTarjeta(tipo, element);
       });
+    }
+
+    // Pintar porcentaje
+    const total2PartidosFiltrados = this.partidosLosDosEquipos.filter(x=> x.filtroAplicado ==true).length;
+    const totalUltimos6Home = this.ultimos6Home.filter(x=> x.filtroAplicado ==true).length;
+    const totalUltimos6Away = this.ultimos6Away.filter(x=> x.filtroAplicado ==true).length;
+    const totalSoloLocal = this.soloLocal.filter(x=> x.filtroAplicado ==true).length;
+    const totalSoloVisita = this.soloVisita.filter(x=> x.filtroAplicado ==true).length;
+
+    const porcentaje2Equipos = Math.round(((total2PartidosFiltrados * 100 )/( this.partidosLosDosEquipos.length  ))) || 0;
+    const porcentajeUltimos6Home = Math.round(((totalUltimos6Home * 100 )/( this.ultimos6Home.length  ))) || 0;
+    const porcentajeUltimos6Away = Math.round(((totalUltimos6Away * 100 )/( this.ultimos6Away.length  ))) || 0;
+    const porcentajeSoloLocal = Math.round(((totalSoloLocal * 100 )/( this.soloLocal.length  ))) || 0;
+    const porcentajeSoloVisita = Math.round(((totalSoloVisita * 100 )/( this.soloVisita.length  ))) || 0;
+
+    this.porcentajeFiltro = {
+      porcentaje2Equipos: ":" + String(porcentaje2Equipos) + "%",
+      porcentajeUltimos6Home: ":" + porcentajeUltimos6Home + "%",
+      porcentajeUltimos6Away: ":" + porcentajeUltimos6Away + "%",
+      porcentajeSoloLocal: ":" + porcentajeSoloLocal + "%",
+      porcentajeSoloVisita: ":" + porcentajeSoloVisita + "%"
     }
 
   }

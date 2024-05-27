@@ -139,7 +139,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-12">
-                                                <h3>PARTIDOS ENTRE LOS DOS EQUIPOS</h3>
+                                                <h3>PARTIDOS ENTRE LOS DOS EQUIPOS <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentaje2Equipos}}</span></h3>
                                             </div>
                                         </div>
 
@@ -172,7 +172,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <h4>{{strHomeTeamNameSelected}}</h4>
+                                            <h4>{{strHomeTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Home}}</span></h4>
                                         </div>
                                         <div class="table-responsive">
                                             <table class="table table-bordered ">
@@ -198,7 +198,7 @@
                                             </table>
                                         </div>
                                         <div class="row">
-                                            <h4>{{strAwayTeamNameSelected}}</h4>
+                                            <h4>{{strAwayTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Away}}</span></h4>
                                         </div>
                                         <div class="table-responsive">
 
@@ -230,7 +230,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <h4>{{strHomeTeamNameSelected}}</h4>
+                                            <h4>{{strHomeTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeSoloLocal}}</span></h4>
                                         </div>
 
                                         <div class="table-responsive">
@@ -256,7 +256,7 @@
                                             </table>
                                         </div>
                                         <div class="row">
-                                            <h4>{{strAwayTeamNameSelected}}</h4>
+                                            <h4>{{strAwayTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeSoloVisita}}</span></h4>
                                         </div>
                                         <div class="table-responsive">
                                             <table class="table table-bordered ">
@@ -295,7 +295,7 @@
                                                 </select>
                                             </div>
                                             <div class="p-2 bd-highlight offset-lg-2 col-lg-2 ">
-                                                <label class="form-label">Goles Local más de:
+                                                <label class="form-label">Goles Local más de2:
                                                 </label>
                                                 <select class="form-select" (change)="aplicarfiltroMatch(1)" [(ngModel)]="strMatchFilterLocalSelected">
                                                         <option [ngValue]="" disabled hidden></option>
@@ -316,7 +316,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-12">
-                                                <h3>PARTIDOS ENTRE LOS DOS EQUIPOS</h3>
+                                                <h3>PARTIDOS ENTRE LOS DOS EQUIPOS <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentaje2Equipos}}</span></h3>
                                             </div>
 
                                             <table class="table table-bordered ">
@@ -346,13 +346,13 @@
 
                                         <div class="row">
                                             <div class="col-4">
-                                                <h3>{{strHomeTeamNameSelected}}</h3>
+                                                <h3>{{strHomeTeamNameSelected}} <span><span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Home}}</span></span></h3>
                                             </div>
                                             <div class="col-4">
                                                 <h3>ÚLTIMOS PARTIDOS</h3>
                                             </div>
                                             <div class="col-4">
-                                                <h3>{{strAwayTeamNameSelected}}</h3>
+                                                <h3>{{strAwayTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Away}}</span></h3>
                                             </div>
                                             <div class="col-6">
                                                 <table class="table table-bordered ">
@@ -405,13 +405,13 @@
                                         <br>
                                         <div class="row">
                                             <div class="col-4">
-                                                <h3>{{strHomeTeamNameSelected}}</h3>
+                                                <h3>{{strHomeTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeSoloLocal}}</span></h3>
                                             </div>
                                             <div class="col-4">
                                                 <h3>LOCAL / VISITA</h3>
                                             </div>
                                             <div class="col-4">
-                                                <h3>{{strAwayTeamNameSelected}}</h3>
+                                                <h3>{{strAwayTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeSoloVisita}}</span></h3>
                                             </div>
                                             <div class="col-6">
                                                 <table class="table table-bordered ">
@@ -499,7 +499,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-12">
-                                                <h3>PARTIDOS ENTRE LOS DOS EQUIPOS</h3>
+                                                <h3>PARTIDOS ENTRE LOS DOS EQUIPOS <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentaje2Equipos}}</span></h3>
                                             </div>
                                         </div>
                                         <div class="table-responsive">
@@ -531,7 +531,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <h4>{{strHomeTeamNameSelected}}</h4>
+                                            <h4>{{strHomeTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Home}}</span></h4>
                                         </div>
 
                                         <div class="table-responsive">
@@ -558,7 +558,7 @@
                                             </table>
                                         </div>
                                         <div class="row">
-                                            <h4>{{strAwayTeamNameSelected}}</h4>
+                                            <h4>{{strAwayTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Away}}</span></h4>
                                         </div>
 
                                         <div class="table-responsive">
@@ -590,7 +590,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <h4>{{strHomeTeamNameSelected}}</h4>
+                                            <h4>{{strHomeTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeSoloLocal}}</span></h4>
                                         </div>
 
                                         <div class="table-responsive">
@@ -617,7 +617,7 @@
                                             </table>
                                         </div>
                                         <div class="row">
-                                            <h4>{{strAwayTeamNameSelected}}</h4>
+                                            <h4>{{strAwayTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeSoloVisita}}</span></h4>
                                         </div>
 
                                         <div class="table-responsive">
@@ -682,7 +682,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-12">
-                                                <h3>PARTIDOS ENTRE LOS DOS EQUIPOS</h3>
+                                                <h3>PARTIDOS ENTRE LOS DOS EQUIPOS <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentaje2Equipos}}</span></h3>
                                             </div>
 
 
@@ -713,13 +713,13 @@
 
                                         <div class="row">
                                             <div class="col-4">
-                                                <h3>{{strHomeTeamNameSelected}}</h3>
+                                                <h3>{{strHomeTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Home}}</span></h3>
                                             </div>
                                             <div class="col-4">
                                                 <h3>ÚLTIMOS PARTIDOS</h3>
                                             </div>
                                             <div class="col-4">
-                                                <h3>{{strAwayTeamNameSelected}}</h3>
+                                                <h3>{{strAwayTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Away}}</span></h3>
                                             </div>
                                             <div class="col-6">
                                                 <table class="table table-bordered ">
@@ -772,13 +772,13 @@
                                         <br>
                                         <div class="row">
                                             <div class="col-4">
-                                                <h3>{{strHomeTeamNameSelected}}</h3>
+                                                <h3>{{strHomeTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeSoloLocal}}</span></h3>
                                             </div>
                                             <div class="col-4">
                                                 <h3>LOCAL / VISITA</h3>
                                             </div>
                                             <div class="col-4">
-                                                <h3>{{strAwayTeamNameSelected}}</h3>
+                                                <h3>{{strAwayTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeSoloVisita}}</span></h3>
                                             </div>
                                             <div class="col-6">
                                                 <table class="table table-bordered ">
@@ -868,7 +868,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-12">
-                                                <h3>PARTIDOS ENTRE LOS DOS EQUIPOS</h3>
+                                                <h3>PARTIDOS ENTRE LOS DOS EQUIPOS <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentaje2Equipos}}</span></h3>
                                             </div>
                                         </div>
                                         <div class="p-2 bd-highlight col-lg-3 ">
@@ -909,7 +909,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <h4>{{strHomeTeamNameSelected}}</h4>
+                                            <h4>{{strHomeTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Home}}</span></h4>
                                         </div>
 
                                         <div class="table-responsive">
@@ -936,7 +936,7 @@
                                             </table>
                                         </div>
                                         <div class="row">
-                                            <h4>{{strAwayTeamNameSelected}}</h4>
+                                            <h4>{{strAwayTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Away}}</span></h4>
                                         </div>
 
                                         <div class="table-responsive">
@@ -968,7 +968,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <h4>{{strHomeTeamNameSelected}}</h4>
+                                            <h4>{{strHomeTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeSoloLocal}}</span></h4>
                                         </div>
 
                                         <div class="table-responsive">
@@ -995,7 +995,7 @@
                                             </table>
                                         </div>
                                         <div class="row">
-                                            <h4>{{strAwayTeamNameSelected}}</h4>
+                                            <h4>{{strAwayTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeSoloVisita}}</span></h4>
                                         </div>
 
                                         <div class="table-responsive">
@@ -1059,7 +1059,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-12">
-                                                <h3>PARTIDOS ENTRE LOS DOS EQUIPOS</h3>
+                                                <h3>PARTIDOS ENTRE LOS DOS EQUIPOS <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentaje2Equipos}}</span></h3>
                                             </div>
 
                                             <table class="table table-bordered ">
@@ -1089,13 +1089,13 @@
 
                                         <div class="row">
                                             <div class="col-4">
-                                                <h3>{{strHomeTeamNameSelected}}</h3>
+                                                <h3>{{strHomeTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Home}}</span></h3>
                                             </div>
                                             <div class="col-4">
                                                 <h3>ÚLTIMOS PARTIDOS</h3>
                                             </div>
                                             <div class="col-4">
-                                                <h3>{{strAwayTeamNameSelected}}</h3>
+                                                <h3>{{strAwayTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Away}}</span></h3>
                                             </div>
                                             <div class="col-6">
                                                 <table class="table table-bordered ">
@@ -1148,13 +1148,13 @@
                                         <br>
                                         <div class="row">
                                             <div class="col-4">
-                                                <h3>{{strHomeTeamNameSelected}}</h3>
+                                                <h3>{{strHomeTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeSoloLocal}}</span></h3>
                                             </div>
                                             <div class="col-4">
                                                 <h3>LOCAL / VISITA</h3>
                                             </div>
                                             <div class="col-4">
-                                                <h3>{{strAwayTeamNameSelected}}</h3>
+                                                <h3>{{strAwayTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeSoloVisita}}</span></h3>
                                             </div>
                                             <div class="col-6">
                                                 <table class="table table-bordered ">
@@ -1244,7 +1244,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-12">
-                                                <h3>PARTIDOS ENTRE LOS DOS EQUIPOS</h3>
+                                                <h3>PARTIDOS ENTRE LOS DOS EQUIPOS <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentaje2Equipos}}</span></h3>
                                             </div>
                                         </div>
                                         <div class="table-responsive">
@@ -1276,7 +1276,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <h4>{{strHomeTeamNameSelected}}</h4>
+                                            <h4>{{strHomeTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Home}}</span></h4>
                                         </div>
 
                                         <div class="table-responsive">
@@ -1303,7 +1303,7 @@
                                             </table>
                                         </div>
                                         <div class="row">
-                                            <h4>{{strAwayTeamNameSelected}}</h4>
+                                            <h4>{{strAwayTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Away}}</span></h4>
                                         </div>
 
                                         <div class="table-responsive">
@@ -1335,7 +1335,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <h4>{{strHomeTeamNameSelected}}</h4>
+                                            <h4>{{strHomeTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeSoloLocal}}</span></h4>
                                         </div>
 
                                         <div class="table-responsive">
@@ -1362,7 +1362,7 @@
                                             </table>
                                         </div>
                                         <div class="row">
-                                            <h4>{{strAwayTeamNameSelected}}</h4>
+                                            <h4>{{strAwayTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Away}}</span></h4>
                                         </div>
 
                                         <div class="table-responsive">
@@ -1426,7 +1426,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-12">
-                                                <h3>PARTIDOS ENTRE LOS DOS EQUIPOS</h3>
+                                                <h3>PARTIDOS ENTRE LOS DOS EQUIPOS <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentaje2Equipos}}</span></h3>
                                             </div>
 
                                             <table class="table table-bordered ">
@@ -1456,13 +1456,13 @@
 
                                         <div class="row">
                                             <div class="col-4">
-                                                <h3>{{strHomeTeamNameSelected}}</h3>
+                                                <h3>{{strHomeTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Home}}</span></h3>
                                             </div>
                                             <div class="col-4">
                                                 <h3>ÚLTIMOS PARTIDOS</h3>
                                             </div>
                                             <div class="col-4">
-                                                <h3>{{strAwayTeamNameSelected}}</h3>
+                                                <h3>{{strAwayTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Away}}</span></h3>
                                             </div>
                                             <div class="col-6">
                                                 <table class="table table-bordered ">
@@ -1515,13 +1515,13 @@
                                         <br>
                                         <div class="row">
                                             <div class="col-4">
-                                                <h3>{{strHomeTeamNameSelected}}</h3>
+                                                <h3>{{strHomeTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeSoloLocal}}</span></h3>
                                             </div>
                                             <div class="col-4">
                                                 <h3>LOCAL / VISITA</h3>
                                             </div>
                                             <div class="col-4">
-                                                <h3>{{strAwayTeamNameSelected}}</h3>
+                                                <h3>{{strAwayTeamNameSelected}} <span class= "porcentajeFiltro">{{porcentajeFiltro.porcentajeUltimos6Away}}</span></h3>
                                             </div>
                                             <div class="col-6">
                                                 <table class="table table-bordered ">
