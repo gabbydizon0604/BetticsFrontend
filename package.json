@@ -15,8 +15,8 @@
     "build": "ng build"
   },
   "engines": {
-    "node": "16.13.1",
-    "npm": "8.1.2"
+    "node": "24.x",
+    "npm": "10.x"
   },
   "private": true,
   "dependencies": {
